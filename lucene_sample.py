@@ -1,4 +1,5 @@
 import lucene
+import json
 from org.apache.lucene.queryparser.classic import QueryParser, MultiFieldQueryParser
 from org.apache.lucene.index import IndexWriter, IndexWriterConfig, DirectoryReader
 from org.apache.lucene.document import Document, Field, StringField, TextField
@@ -30,10 +31,17 @@ class Lucene(object):
     def getAnalyzer(self):
         return StandardAnalyzer()
 
-    def search(self, query):
+    def search_content(self, query):
         reader = DirectoryReader.open(self.store)
         index_searcher = IndexSearcher(reader)
         query = QueryParser("content", self.getAnalyzer()).parse(query["content"])
+        result = index_searcher.search(query, 10)
+        return result
+    
+    def search_title(self, query):
+        reader = DirectoryReader.open(self.store)
+        index_searcher = IndexSearcher(reader)
+        query = QueryParser('title', self.getAnalyzer()).parse(query['title'])
         result = index_searcher.search(query, 10)
         return result
     
@@ -133,7 +141,13 @@ if __name__ == "__main__":
     proto.index_documents((docs[0], docs[1], docs[2]))
     m = Menu()
     item = m.print_menu()
-    result = proto.search({'content': item})
+    print(bcolors.HEADER+'En los titulos: ')
+    result = proto.search_title({'title': item})
+    for doc in result.scoreDocs:
+        print(doc)
+    print(bcolors.HEADER+'En el contenido: ')
+    result = proto.search_content({'content': item})
     for doc in result.scoreDocs:
         print(doc)
     proto.close()
+# -------------------------------------------------------------------------------------------------------------
