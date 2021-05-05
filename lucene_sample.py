@@ -16,16 +16,18 @@ class Lucene(object):
     def __init__(self):
         pp = Paths.get("lucene_index")
         self.store = SimpleFSDirectory(pp)
+        # --------------------------------> Se abre el archivo JSON.
+        f = open('documents.json',)
+        # --------------------------------> Se regresa un JSON.
+        documents = json.load(f)
 
     def index_documents(self, docs):
         analyzer = self.getAnalyzer()
         index_writer_config = IndexWriterConfig(analyzer)
         index_writer_config.setOpenMode(IndexWriterConfig.OpenMode.CREATE)
         index_writer = IndexWriter(self.store, index_writer_config)
-
         for doc in docs:
             index_writer.addDocument(doc)
-
         index_writer.commit()
 
     def getAnalyzer(self):
@@ -50,6 +52,7 @@ class Lucene(object):
 
     def instantiate(self):
         doc = []
+        for 
         doc.append(Document())
         doc[0].add(Field('title', 'Software Engineering, Master of Science',
                        TextField.TYPE_STORED))
@@ -134,11 +137,12 @@ class Menu(object):
 
 # ---------------------------------------------> Main --------------------------------------------------------
 if __name__ == "__main__":
+    
     lucene.initVM()
     proto = Lucene()
     docs = []
     docs = proto.instantiate()
-    proto.index_documents((docs[0], docs[1], docs[2]))
+    proto.index_documents(docs)
     m = Menu()
     item = m.print_menu()
     print(bcolors.HEADER+'En los titulos: ')
