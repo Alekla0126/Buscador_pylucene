@@ -8,6 +8,7 @@ from org.apache.lucene.store import SimpleFSDirectory
 from org.apache.lucene.search import IndexSearcher
 from java.io import StringReader
 from java.nio.file import Paths
+from Tkinter import *
 
 
 # ---------------------------------------------> Lucene ------------------------------------------------------
@@ -62,6 +63,7 @@ class Lucene(object):
         return doc
 # ------------------------------------------------------------------------------------------------------------
 
+
 # ---------------------------------------------> Menu --------------------------------------------------------
 class bcolors:
 
@@ -96,23 +98,27 @@ class Menu(object):
         return item
 # ------------------------------------------------------------------------------------------------------------
 
+
 # ---------------------------------------------> Main --------------------------------------------------------
 if __name__ == "__main__":
-    
+
     lucene.initVM()
     proto = Lucene()
     docs = []
     docs = proto.instantiate()
     proto.index_documents(docs)
-    m = Menu()
-    item = m.print_menu()
-    print(bcolors.HEADER+'En los titulos: ')
-    result = proto.search_title({'title': item})
-    for doc in result.scoreDocs:
-        print(doc)
-    print(bcolors.HEADER+'En el contenido: ')
-    result = proto.search_content({'content': item})
-    for doc in result.scoreDocs:
-        print(doc)
-    proto.close()
-# -------------------------------------------------------------------------------------------------------------
+    while True:
+    
+        m = Menu()
+        item = m.print_menu()
+        print('En el título: ')
+        result = proto.search_title({'title': item})
+        for doc in result.scoreDocs:
+            print(doc)
+        print('En el contenido: ')
+        result = proto.search_content({'content': item})
+        for doc in result.scoreDocs:
+            print(doc)
+
+    
+# ------------------------------------------------------------------------------------------------------------

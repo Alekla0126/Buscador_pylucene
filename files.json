@@ -13,10 +13,22 @@
       "content": "The SIT program is flexible and adapted to many different individual situations. It is available both onsite in Schaffhausen and in an online offering, as well as any onsite-online combination. It offers qualified students attractive scholarships and the possibility of a second year in one of our partner universities in Europe, the USA, and Asia."
     },
     "document3": {
-      "title": "M.Sc. in Computing",
+      "title": "",
       "docid": 3,
-      "journalist": "",
+      "journalist": "M.Sc. in Computing",
       "content": "The term “software engineering” was coined in 1968, during the NATO conference in Garmish. It was used in response to the problems associated with a software development that then still young IT sector was facing. Although more than 40 years have passed, the software development in many IT companies is still chaotic. Software is frequently delivered after the deadline, it costs much more than anticipated at the beginning, developers are often forced to work over-hours, and despite all these efforts, the software that is delivered does not meet customer needs and contains too many defects. The goal of Software Engineering as a discipline, is to deliver solutions that can be used to mitigate the problems associated with the software development by applying engineering methods to its development. Since 1998, Poznan University of Technology offers a M.Sc. program in Software Engineering. The curriculum aims at providing graduates with the necessary knowledge and skills to perform three important roles in IT projects: Project Manager – project management methodologies, risk management, planning (size and effort estimation of software development); Analyst – business process modeling, elicitation of functional and non-functional requirements for information systems, and preparation of acceptance tests; Architect, senior developer – object-oriented design, software architectures, real-time systems, and software testing."
+    },
+    "document4": {
+      "title": "Advanced Computational Science",
+      "docid": 4,
+      "journalist": "Skolkovo Institute of Science and Technology",
+      "content": "Modern science and engineering critically rely on efficient and fast computational techniques and models. ACS program achieves the synergy of state-of-the-art mathematical modeling methods (numerical ODE and PDE, stochastic modeling, machine learning and Big data-based approaches) and their implementation with modern high performance parallel computational facilities furnished with up-to-date software. The cutting-edge scientific MSc project solidifies the theoretical knowledge obtained in the courses."
+    },
+    "document5": {
+      "title": "MSc Software Engineering",
+      "docid": 5,
+      "journalist": "University of Europe",
+      "content": "At UE we understand your passion for software engineering. This Master's degree will give you all the necessary skills to develop software solutions for the most exciting areas of our time: autonomous driving, IoT, cloud computing, mobile apps or machine learning. Our industry experts will provide you with the hands-on knowledge you need pursue the career of your dreams. Study at the UE Innovation Hub near Berlin and become a software pioneer - enquire more info now!"
     }
   }]
 }
